@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link href="../static/css/bootstrap.css"
+          th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
+    <link href="../static/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+<form action="#" th:action="@{/}" method="post">
+    <div class="alert alert-info">
+        <div class="text-center">
+            <div class="col">
+                <div class="center-block">
+                    <div class="jumbotron"><h1>Witaj w naszym quizie!</h1></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+        Strona główna Quiz
+    </div>
+    <div id="topbar">Opracowanie odpowiedzi na pytanie na egzamin dyplomowy dla kierunku Automatyka i Robotyka
+        Politechniki Wrocławskiej:
+        <b>Omówić narzędzia i metody rozwiązywania zadania sterowania optymalnego.</b>
+    </div>
+    <div class="form-group">
+        <label for="firstname">First name: </label>
+        <input th:type="text" id="firstname" class="form-control" th:field="${person.name}" required="true"
+               placeholder="Podaj imię"/>
+    </div>
+
+    <div class="form-group">
+        <label for="surname">Surname: </label>
+        <input th:type="text" id="surname" class="form-control" th:field="${person.surname}"
+               placeholder="Podaj nazwisko"/>
+    </div>
+
+    <div class="form-group">
+        <label for="mail">Mail: </label>
+        <input th:type="email" id="mail" class="form-control" th:field="${person.mail}" required="true"
+               placeholder="Podaj adres mailowy, na który dostaniesz wynik quizu"/>
+    </div>
+    <div class="form-group">
+        <button th:type="submit" class="btn btn-primary">Wyślij</button>
+    </div>
+</form>
+</body>
+</html>

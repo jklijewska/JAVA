@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link href="../static/css/bootstrap.css"
+          th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
+    <link href="../static/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+<div class="alert alert-info">
+    <div class="text-center">
+        <div class="col">
+            <div class="center-block">
+                <div class="jumbotron"><h1>Odpowiedz na pytania</h1></div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 th:text="${question1}"></h3>
+<form action="#" th:action="@{/question}" method="post">
+<div class="radio">
+    <label><input type="radio" name="optradio" value="1" th:field="${question.correctAnswer}"/><p th:text="${answer1}"></p></label>
+</div>
+<div class="radio">
+    <label><input type="radio" name="optradio" value="2" th:field="${question.correctAnswer}"/><p th:text="${answer2}"></p></label>
+</div>
+<div class="radio disabled">
+    <label><input type="radio" name="optradio" value="3" th:field="${question.correctAnswer}"/><p th:text="${answer3}"></p></label>
+</div>
+    <div class="form-group">
+        <button th:type="submit" class="btn btn-primary">Wyślij</button>
+    </div>
+</form>
+
+
+</body>
+</html>
