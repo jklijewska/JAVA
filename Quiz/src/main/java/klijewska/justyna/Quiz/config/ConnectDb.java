@@ -1,4 +1,4 @@
-package klijewska.justyna.Quiz.db;
+package klijewska.justyna.Quiz.config;
 
 import java.sql.*;
 

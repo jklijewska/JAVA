@@ -5,5 +5,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonDAO {
     void createPerson(Person person);
-    Person getPerson(Person person);
+    Person getPerson();
+    int showPoints(Person person);
+    Person getActPerson();
+    void showAllPersons();
+    void updatePoints(Person person);
 }

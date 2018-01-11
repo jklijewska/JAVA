@@ -7,9 +7,16 @@
           th:href="@{css/bootstrap.css}" rel="stylesheet" media="screen"/>
     <link href="../static/css/bootstrap.min.css"
           th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../css/style.css" th:href="@{/css/style.css}" />
 
 </head>
 <body>
+<ul class="nav nav-tabs">
+    <li class="active"><a href="/">Strona Główna</a></li>
+    <li><a href="/question">Quiz</a></li>
+</ul>
+
 <div class="alert alert-info">
     <div class="text-center">
         <div class="col">
@@ -19,6 +26,8 @@
         </div>
     </div>
 </div>
+
+<div class="que">
 <h3 th:text="${question1}"></h3>
 <form action="#" th:action="@{/question}" method="post">
 <div class="radio">
@@ -34,7 +43,11 @@
         <button th:type="submit" class="btn btn-primary">Wyślij</button>
     </div>
 </form>
+</div>
 
+<div class="footer">
+    &copy; Justyna Klijewska 2017
+</div>
 
 </body>
 </html>

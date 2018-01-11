@@ -1,0 +1,47 @@
+body{
+background-color:#e1e1e1;
+margin-left:auto;
+margin-right:auto;
+}
+.que{
+margin-left:50px;
+}
+
+.summaryvalue{
+text-align: center;
+font-size:300%;
+}
+
+.footer{
+background-color:gray;
+ position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
