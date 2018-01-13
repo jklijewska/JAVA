@@ -32,6 +32,8 @@ public class QuizController {
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String hello(ModelMap model){
         model.addAttribute("person", new Person());
+        counter=0;
+        points=0;
         return "initialView";
 
     }
@@ -87,8 +89,10 @@ public class QuizController {
          model.addAttribute("summary", points);
          model.addAttribute("allpoints", counter);
      //    eServices.sendSimplyMsg(personDAO.getPerson().getMail(),"Wynik testu", "Zdobyłeś: "+points+" punktów");
-         eServices.sendMsgWithAttachment(personDAO.getPerson().getMail(), "Wynik testu 1", "Zdobyłeś: "+points+" pkt",
-                 "C:\\\\Users\\\\Klijek\\\\Desktop\\\\test.txt");
+        // eServices.sendMsgWithAttachment(personDAO.getPerson().getMail(), "Wynik testu 1", "Zdobyłeś: "+points+" pkt",
+       //          "C:\\\\Users\\\\Klijek\\\\Desktop\\\\test.txt");
+        counter=0;
+        points=0;
         return "summaryView";
 
     }

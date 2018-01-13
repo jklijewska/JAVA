@@ -45,12 +45,4 @@ public class EmailServicesImplements implements EmailServices{
 
     }
 
-    @Override
-    public void correctAnswersMsg(String to){
-        SimpleMailMessage simpleMsg = new SimpleMailMessage();
-        simpleMsg.setTo(to);
-        simpleMsg.setSubject("Poprawnie odpowiedzi do pytania 8: ");
-       // simpleMsg.setText(text);
-        sender.send(simpleMsg);
-    }
 }

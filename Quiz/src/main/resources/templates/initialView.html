@@ -9,7 +9,7 @@
     <link href="../static/css/bootstrap.min.css"
           th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <link rel="stylesheet" type="text/css" media="all"
-          href="../../css/style.css" th:href="@{/css/style.css}" />
+          href="../../css/style.css" th:href="@{/css/style.css}"/>
 
 </head>
 <body>
@@ -24,45 +24,435 @@
         <div class="text-center">
             <div class="col">
                 <div class="center-block">
-                    <div class="jumbotron"><h1>Omówienie narzędzi i metod rozwiązywania zadania sterowania optymalnego.</h1></div>
+                    <div class="jumbotron"><h1>Omówienie narzędzi i metod rozwiązywania zadania sterowania
+                        optymalnego.</h1></div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
+
         <div class="row">
-            <div class="col-md-8">
-                <h3><b>Treść zagadnienia</b></h3>
-                Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis in nibh vel risus. Sed vel lectus. Ut sagittis, ipsum dolor quam.
-            <br/>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit eu, tempor diam pede cursus vitae, ultricies eu, faucibus quis, porttitor eros cursus lectus, pellentesque eget, bibendum a, gravida ullamcorper quam. Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. Lorem ipsum primis in nibh vel risus. Sed vel lectus. Ut sagittis, ipsum dolor quam.
+
+                <br/>
+                <div class="container">
+                    <div class="page-header">
+                        <h2>Rozdział 1.
+                            <small><b>Wstęp</b></small>
+                        </h2>
+                    </div>
+                </div>
+               <p> <b>Sterowanie optymalne</b> jest jedną z gałęzi teorii sterowania i stanowi rozwinięcie rachunku
+                wariacyjnego. Sterowanie jest to celowe oddziaływanie człowieka lub skonstruowanych przez niego urządzeń
+                na obiekt sterowania który może być natury technicznej, biologicznej, ekonomicznej. Oddziaływanie to
+                zapewnia przebiegi procesów w obiekcie zgodne z przebiegami pożądanymi tj. zgodnie z zadaniem
+                sterowania.</p>
+                <p>Wyróżnia się dwie podstawowe struktury układów sterowania (zespół urządzeń sterujących i obiektu
+                sterowania):
+                <ul class="uln">
+                    <li><b>otwarty układ sterowania</b> w którym nie występuje sprzężenie zwrotne, czyli urządzenie
+                        sterujące nie ma informacji o aktualnym stanie procesów w obiekcie sterowanym. Zakładana jest
+                        dokładna znajomość modelu i na tej podstawie określany jest algorytm sterowania. Przez brak
+                        informacji o obiekcie sterowanym nie uwzględnia on bieżących zmian w obiekcie, a w związku z tym
+                        może nie być aż tak dokładny.
+                        <img src="http://pl.tinypic.com/r/24pa3hy/9"/>
+                    </li>
+                    <li><b>zamknięty układ sterowania</b> w którym występuje sprzężenie zwrotne, czyli urządzenie
+                        sterujące ma informację o aktualnym stanie procesów w obiekcie sterowanym i korzysta z tej
+                        informacji przy zadawaniu sterowania. Wyjście obiektu jest mierzone i porównywane z pożądanym
+                        przebiegiem. Na tej podstawie określana jest korekta sterowania, która uwzględnia bieżące zmiany
+                        w obiekcie.
+                    </li>
+            </ul></p>
+                <p>
+                Dla szeregu układów pożądane przebiegi zmiennych procesowych określane są w rezultacie rozwiązania
+                zadania <b>sterowania optymalnego</b> w zależności od obranego wskaźnika jakości procesu np.: czasu
+                realizacji procesu, produkcji składnika użytecznego, strat energetycznych, zużycia surowca). Konieczne
+                jest uwzględnienie równań procesu i jego ograniczeń (np.: ograniczenia zakresu dopuszczalnych wartości
+                zmiennych procesowych). W zamkniętych układach sterowania dokonywana jest korekta sterowania optymalnego
+                uwzględniająca odchylenie przebiegów zmiennych procesowych od och przebiegów optymalnych.
+                </p>
+                <p>Oznacza to, że teoria sterowania optymalnego polega na określeniu na podstawie informacji o danym
+                obiekcie decyzji, których realizacja umożliwi otrzymane z góry założonych właściwości tego obiektu.
+                Informacje o obiekcie mogą być dwóch rodzajów:
+                <ul class="uln">
+                    <li> dostarczane przez model obiektu na podstawie którego można przewidzieć zachowanie obiektu,</li>
+                    <li> pomiary dokonywane na obiekcie, określające jego stan w chwili podejmowania decyzji</li>
+                </ul>
+                </p><p>
+                Pozostaje określić właściwości (charakterystyki), które są na ogół z góry zadane przez użytkownika.
+                Przykładowo, chcemy dokonać regulacji temperatury wewnątrz pomieszczenia i zakładamy, że przy stałych
+                temperaturach zadanej i zewnętrznej uchyb ustalony (różnica między temperaturą zadaną a temperaturą
+                wewnętrzną, nie przekraczał
+                <img src="http://latex2png.com/output//latex_38901ed5c0b7a4e812548251c3d3c979.png"/>
+                Są to więc właściwości typu statycznego lub inaczej właściwości w stanie ustalonym. Można również żądać,
+                aby przy zmianie temperatury zadanej temperatury wewnętrzna osiągała tę nową wartość w określonym czasie
+                (np.: w ciągu 15 minut, a nie w ciągu godziny). Są to właściwości typu dynamicznego (dotyczą procesów
+                przejściowych). Są to właściwości nadążne układu sterowania automatycznego, określone przez
+                charakterystyki regulacji, wiążące się ze zmianą wartości zadanej.
+                </p><p>
+                Aby uzyskać te właściwości należy podjąć następujące działania:
+                <ul class="uln">
+                    <li> badanie obiektu za pomocą odpowiednich metod,</li>
+                    <li> podjęcie decyzji odnośnie struktury urządzeń sterujących, a więc wybór - przy uwzględnieniu
+                        kryteriów ekonomicznych, aspektu ilościowego żądanych wartości układu oraz modelu obiektu
+                        sterowanego,
+                    </li>
+                    <li> określenie parametrów algorytmu sterowania, polega to na dobraniu parametrów urządzeń w taki
+                        sposób, aby dla danej struktury sterowania uzyskać żądane właściwości w ujęciu ciągłym.
+                    </li>
+                </ul></p>
+
+                <br/>
+                <div class="page-header">
+                    <h2>Rozdział 2.
+                        <small><b>Zadanie sterowania optymalnego</b></small>
+                    </h2>
+                </div>
+                <p> Zadania sterowania optymalnego wiążą się z szeregiem zjawisk fizycznych, dla którym mamy do czynienia z
+                tzw. zasadą najmniejszego działania oraz z problemami decyzyjnymi różnych typów. Należy podjąć decyzję
+                optymalną. Zasada najmniejszego działania zakłada, że energia kinetyczna układu pozostaje jak
+                najmniejsza gdy zmiany układu dokonują się
+                pod wpływem jakiś czynników. Aby zbadać więc dynamikę takiego układy należy znaleźć minimum funkcjonału
+                energii (funkcja zależąca od dynamiki). Jeżeli mamy zaś do czynienia z procesem, którego przebieg zależy
+                od parametrów, a jego wynik można przedstawić przy pomocy odpowiedniej funkcji skalarnej (funkcjonał
+                kosztu, funkcja celu). Przedstawia się układ równań różniczkowych opisujących przebiegi zmiennych
+                związane ze sterowaniem. Sterowanie optymalne można wyprowadzić korzystając z:
+                <ul class="uln">
+                    <li> zasady maksimum Pontriagina (podaje ona warunek konieczny),</li>
+                    <li>rozwinięcia równania Hamiltona-Jakobiego-Bellmana (podaje warunek wystarczający)</li>
+                </ul>
+                </p> <p>
+                Układy sterowania optymalnego są zwykle złożonymi układami automatyki kompleksowej, w których do
+                określenia warunków prowadzenia procesu zapewniających ekstremum funkcji wykorzystuje się maszynę
+                cyfrową. W prostych przypadkach, kiedy można ocenić położenie ekstremum za pomocą pomiaru jednej lub
+                dwóch zmiennych i sterować obiektem za pomocą jednej lub dwóch wielkości nastawiających, zadanie może
+                być rozwiązane przez specjalizowany regulator ekstremalny, nazywany również optymalizatorem. Mówimy
+                wówczas o układzie regulacji ekstremalnej, którego działanie polega zwykle na wyszukaniu optymalnego
+                punktu pracy na charakterystykach statycznych obiektu.
+                </p><p>
+                Ważną klasą zadań sterowania optymalnego są zadania optymalnego sterowania docelowego, które są
+                formułowane w odniesieniu do przeróżnych procesów.
+                Podstawowe zadanie optymalnego sterowania docelowego polega na minimalizacji całkowego wskaźnika
+                jakości:
+                <br/>
+                <img src="http://latex2png.com/output//latex_c7e597181d1a29c7b547ecb376a44b03.png"/>
+                <br/>
+                z uwzględnieniem równania stanu procesu: <br/>
+                <img src="http://latex2png.com/output//latex_a638350f081c507e085fba3272847b2f.png"/>
+                <br/>
+                warunków dwugranicznych:<br/>
+                <img src="http://latex2png.com/output//latex_04cd35163e4dad2496365c2b7053e05c.png"/><br/>
+                oraz ograniczeń chwilowych sterowania<br/>
+                <img src="http://latex2png.com/output//latex_6cadbdeb11c7292047680a3e213abbbf.png"/>
+                </p><p>
+                Do zadań sterowania optymalnego należą:
+                <ul class="uln">
+                    <li><b>zadanie optymalnego sterowania docelowego</b> - spośród wszelkich trajektorii stanu
+                        przeprowadzających obiekt z zadanego stanu początkowego do stanu zadanego końcowego należy
+                        wybrać taką trajektorię optymalną dla której minimalizowany jest wskaźnik jakości procesu
+                        np.:straty energetyczne
+                    </li>
+                    <li><b>zadanie optymalnego okresowego</b> - spośród wszystkich okresowych oddziaływań sterujących
+                        należy wybrać takie, które zapewni optymalny i uśredniony wynik jakości procesu
+                    </li>
+                    <li><b>zadanie optymalnej regulacji</b> - wybór optymalnego sterowania korygującego przebieg
+                        trajektorii stanu
+                    </li>
+                </ul>
+                </p>
+                <br/>
+                <div class="page-header">
+                    <h2>Rozdział 3.
+                        <small><b>Podział zagadnień optymalizacyjnych</b></small>
+                    </h2>
+                </div>
+                <p>Zagadnienia optymalizacyjne z dziedziny sterowania można podzielić na dwie grupy. Pierwszą grupę
+                stanowią <b>zadania optymalizacji parametrycznej</b>, optymalizacji licznowej, drugą grupę tworzą zaś
+                <b>zadania optymalizacji funkcyjnej} (dynamicznej</b>. W zadaniu optymalizacji parametrycznej jest
+                określona struktura układu sterowania i określony algorytm, według którego należy generować wektor
+                sterowań. Zadanie polega na optymalnym doborze parametrów układu. Wynikiem optymalizacji są wartości
+                liczbowe parametrów. W zadaniu optymalizacji funkcyjnej poszukiwane jest sterowanie jako przebieg
+                wektora sterowania u(t) w funkcji czasu.</p>
+                <div class="page-header">
+                    <h2>Rozdział 4.
+                        <small><b>Sprowadzenie zadania sterowania optymalnego do zadania wariacyjnego</b></small>
+                    </h2>
+                </div>
+
+                <p>Dla przypadków jednowymiarowego pojedynczej krzywej można założyć, że równanie stanu pozwala
+                jednoznacznie określić sterowanie u(t) w funkcji stanu x(t), pochodnej stanu
+                <img src="http://latex2png.com/output//latex_c89d1aa370efdb32bee2ef430d3da304.png"/> oraz czasu t.
+                Zadanie wariacyjne polega więc na wyborze krzywej x łączącej punkty
+                <img src="http://latex2png.com/output//latex_d2ecbf5932c74fb28efa5bf4c371f9aa.png"/>
+                i minimalizującej funkcjonał G(x). Aby określić warunki konieczne optymalności krzywej w zadaniu
+                wariacyjnym zakładamy, że krzywa jest elementem przestrzeni funkcji różniczkowalnych w sposób ciągły.
+                Musi być również spełnione <b>równanie Eulera-Lagrange'a</b> - jest to warunek konieczny słabego
+                lokalnego ekstremum funkcji.
+                </p><p>
+                Krzywe spełniającej równanie Eulera-Lagrange'a nazywamy ekstremami. Aby stwierdzić czy dana ekstremala
+                stanowi minimum funkcjonału stosujemy warunki optymalności wyższych rzędów.
+                <div class="page-header">
+                    <h2>Rozdział 5.
+                        <small><b>Metoda funkcji kary i mnożników Lagrange'a</b></small>
+                    </h2>
+                </div>
+                Przy braku ograniczeń równościowych możliwe są dwa przypadki: rozwiązanie leży wewnątrz zbioru
+                dopuszczalnego albo leży na jego skraju (aktywne jest co najmniej jedno ograniczenie). Dodajmy więc do
+                funkcji celu dodatnią karę związaną z przekroczeniem ograniczeń.
+                </p> <p>
+                Rozpatrujemy zadanie minimalizacji funkcji f(x) z ograniczeniami tzn.:
+                <br/>
+                min f(x) przy warunkach: <br/>
+                <img src="http://latex2png.com/output//latex_844dd2fccda66f3f2eb42018d2947242.png"/><br/>
+                Definiujemy funkcję Lagrage'a: <br/>
+                <img src="http://latex2png.com/output//latex_ac7ca9dc0d504312db7a4983795cfa75.png"/><br/>
+                Warunkiem koniecznym rozwiązania zadania jest: <br/>
+                <img src="http://latex2png.com/output//latex_6e9e09fb38475e1787def4ba2252938a.png"/><br/>
+                Aby rozwiązań zadanie optymalizacji szuka się punktu spełniającego warunek konieczny. Robi się to
+                dowolnym algorytmem minimalizacji bez ograniczeń szukając minimum funkcji. W środowisku MATLAB można do
+                tego użyć funkcji fminsearch lub fminunc.</p>
+                <div class="page-header">
+                    <h2>Rozdział 6.
+                        <small><b>Sterowanie optymalne dla układów nieliniowych. Zasada maksimum Pontriagina.</b>
+                        </small>
+                    </h2>
+                </div>
+                <p>
+                Zasada ta bazuje na równaniach Lagrange'a oraz równaniach Hamiltona. Mowi ona, jakie sterowanie u(t)
+                należy użyć to układu sterowania, aby uzyskać wynik optymalizujący zadane kryterium sterowania. Przy
+                rozwiązywaniu tego zagadnienia stosowany jest diagram fazowy (portret fazowy). Wyraża ona warunki
+                konieczne, jakie musi spełniać kontrola optymalna.
+                </p><p>
+                Niech a* będzie kontrolą optymalną dla układu sterowalnego z funkcjonałem zysku. Istnieje funkcja
+                p*:[0,T] taka, że:
+                <br/><img src="http://latex2png.com/output//latex_5119b4e7952f7d57b311298c3cc37ae4.png"/><br/>
+                Ponadto spełniona jest zasada maksimum: <br/>
+                <img src="http://latex2png.com/output//latex_08e1555960b1df65802e7564c0e79650.png"/><br/>
+                oraz hamiltonian jest całką pierwszą trajektorii. Wartość końcowa funkcji wyznaczona jest przez: <br/>
+                <img src="http://latex2png.com/output//latex_7e94659c82234488bf6b51c67ecc3369.png"/><br/>
+                Równania (ODE) i (ADJ) nazywamy równaniami sprzężonymi a (TR) warunkiem transwersalności. Funkcję p
+                nazywamy kostanem.
+                </p><p>
+                Obecność ograniczeń stanu końcowego może powodować, że sterowanie optymalne jest wyznaczane tylko przez
+                ograniczenia zadania. Wówczas mnożnik Lagrange'a związany z minimalizowanym funkcjonałem, jest równy
+                zeru i mówimy, że zadanie jest nienormalne. W przeciwnym wypadku zadanie jest normalne. Pojęcie
+                normalności odgrywa zasadniczą rolę przy konstrukcji algorytmów optymalizacji. W zadaniu nienormalnym
+                minimalizowany funkcjonał nie wpływa na swoje warunki optymalności.</p>
+                <div class="page-header">
+                    <h2>Rozdział 7.
+                        <small><b>Zasada optymalności Bellmana</b></small>
+                    </h2>
+                </div><p>
+                Zasadę Bellmana stosuje się między innymi do rozwiązania zadania dynamicznego, jest również
+                rozszerzeniem zasady przyczynowości. Kluczową sprawą jest określenie, czy modelowany proces jest
+                procesem Markowa.
+                Proces Markowa, jest to proces w którym w dowolnej liczbie decyzji k, wpływ pozostałych etapów procesu
+                decyzyjnego na zysk całkowity zależy tylko od stanu układu przy końcu k-tej decyzji i od decyzji
+                następnych. Dla takiego procesu zasada optymalności wygląda następująco:
+                Strategia optymalna ma tę własność, że jakikolwiek byłby stan początkowy i decyzja początkowa, pozostałe
+                decyzje muszą tworzyć strategię optymalną z punktu widzenia stanu wynikłego z pierwszej decyzji.
+                </p><p>
+                <b>Zasada optymalności Bellmana</b><br/>
+                <i>Jeżeli znamy najlepszą drogę przejścia od punktu początkowego do punktu koncowego prowadzącą przez
+                    kolejne punkty, to każdy fragment tej drogi pomiędzy dowolnym punktem pośrednim a punktem końcowym
+                    jest najlepszą drogą przejścia od tego punktu do punktu końcowego.
+                </i></p><p>
+                Do równoważnych sformułowań zasady optymalności należą:
+                <ul class="uln">
+                    <li> Każdy końcowy odcinek trajektorii optymalnej jest sam dla siebie trajektorią optymalną.</li>
+                    <li> Strategia optymalna nie zależy od historii procesu i może być określona wyłącznie na podstawie
+                        stanu procesu w danej chwili t. Trajektoria optymalna wychodząca z drugiego punktu jest
+                        całkowicie określona przez jej stan początkowy i nie zależy od sterowania.
+                    </li>
+                    <li>Jeśli dana jest trajektoria optymalna zapewniająca minim funkcjonału G(x,u) w przedziale
+                        i dane są chwile to trajektoria pośrednia jest również trajektorią optymalną dla problemu
+                        minimalizacji funkcjonału G(x,u).
+                    </li>
+                </ul></p>
+                <div class="page-header">
+                    <h2>Rozdział 8.
+                        <small><b>Warunek optymalności procesu sterowania w postaci równania
+                            Hamiltona-Jacobiego-Bellmana</b></small>
+                    </h2>
+                </div><p>
+                Mamy funkcję Bellmana jako optymalną wartość wskaźnika jakości na końcowym odcinku trajektorii procesu.
+                Zakładamy, że funkcja jakości optymalnej S jest różniczkowalna względem stanu x i czasu t. Przez analizę
+                przyrostu czasu i odpowiadającemu mu przyrostowi stany po rozwinięciu równania w szereg Taylora
+                otrzymujemy:
+                <br/>
+                <img src="http://latex2png.com/output//latex_4cf6f0244c30e8a2f1de7de281951ae9.png"/><br/>
+                przy czym <br/>
+                <img src="http://latex2png.com/output//latex_ab763467e760bcd9f8d40241b3db041b.png"/><br/>
+                Jest to równanie Hamiltona-Jacobiego-Bellmana, które stanowi warunek konieczny optymalności procesu
+                sterowania.</p>
+                <div class="page-header">
+                    <h2>Rozdział 9.
+                        <small><b>Programowanie dynamiczne</b></small>
+                    </h2>
+                </div><p>
+                Każdy algorytm, wykorzystujący zasadę optymalności programowania dynamicznego, składa się z dwóch faz. W
+                pierwszej fazie odnajdywane są wartości najkrótszych dróg z punktu początkowego do wszystkich innych
+                punktów siatki. W drugiej zaś fazie na podstawie tych wartości można odczytać kolejne odcinki
+                najkrótszej drogi.
+                </p><p>
+                Realizacja tej metody wygląda następująco:<br/>
+                L(X) - długość najkrótszej drogi z punktu X do G. Chcemy wyznaczyć L(A).
+                <br/>
+                <i>Algorytm:</i>
+                1. Dla każdego punktu w sieci połączeń wyznacz wartość L(X) zaczynając od punktu docelowego i cofając
+                się w każdym kroku o jedno połączenie dalej do punktu docelowego (zapamiętuj przy tym dla każdego
+                punktu, jakie połączenie należy wybrać, aby przejść najkrótszą drogę od niego do punktu docelowego).
+                <br/>
+                2. Zacznij budować ścieżkę od punktu początkowego posługując się kolejno jakie połączenia tworzą
+                najkrótszą ścieżkę od przechodzonych punktów do punktu docelowego. <br/>
+                <img src="http://pl.tinypic.com/r/2e53art/9"/></p>
+                <div class="page-header">
+                    <h2>Rozdział 10.
+                        <small><b>Metody kierunków poprawy dla nieliniowych problemów sterowania optymalnego</b></small>
+                    </h2>
+                </div><p>
+                W wielu problemach sterowania dokładne obliczenie gradientu wskaźnika jakości zredukowanego do
+                przestrzeni sterowania jest utrudnione z uwagi na złożoność procesu(duża liczna zmiennych stanu,
+                nieliniowy charakter procesu, niestandardowe warunki brzegowe stanu). Dobre wyniki otrzymujemy przy
+                wykorzystaniu równań sprzężonych dla zadań z zadanym stanem początkowym i stosunkowo niewielką liczbą
+                równań stanu. W innych przypadkach konieczne jest użycie gradientu różnicowego.
+                Zgodnie optymistycznym podejściem zakładamy, że:<br/>
+                <ul class="uln">
+                    <li>funkcja wyboru f jest gładka></li>
+                    <li> potrafimy wyliczyć jej gradient</li>
+                    <li> potrafimy wyznaczyć macierz Hessego (gdy jest potrzebna)</li>
+                </ul>
+                Definicja kierunku poprawy d "wystawionego" w punkcie bieżącym, wymaga aby "ruch wzdłuż niego" dał
+                zmalenie funkcji wyboru, co oznacza, że d jest kierunkiem poprawy gdy: <br/>
+                <img src="http://latex2png.com/output//latex_44959089663b926ba0367f857a59be5c.png"/>
+                Zaletą metody gradientu różnicowego jest jej uniwersalność i prostota realizacji metody. Jej wadą jest
+                duża wrażliwość na błędy pojawiające się przy małej precyzji obliczeń. <br/>
+                Jedną z klas problemów optymalnego sterowania, dla której obliczanie gradientu zredukowanego wskaźnika
+                jakości jest utrudnione, jest klasa problemów optymalnego sterowania cyklicznego . Równania sprzężone są
+                w tym przypadku z reguły niestabilne i ich całkowanie wymaga zastosowania szczególnie dokładnych metod.
+                Dlatego warto wykorzystać metodę gradientu różnicowego.</p>
+                <div class="page-header">
+                    <h2>Rozdział 11.
+                        <small><b>Synteza optymalnego regulatora stanu</b></small>
+                    </h2>
+                </div>
+                <p>
+                Celem tej metody jest podtrzymywanie procesu sterowanego na podstawie wyznaczonego sterowania
+                optymalnego w warunkach małych fluktuacji parametrów obiektu sterowania (odchylenia trajektorii stanu od
+                przebiegu nominalnego - optymalnego).<br/>
+                Należy zatem rozwiązać najpierw problem liniowo-kwadratowy sterowania optymalnego (minimalizacji
+                kwadratowego wskaźnika jakości) - stosowana jest zasada maksimum Pontriagina i rozwiązanie równań
+                Riccatiego. Kolejno należy określić korekty sterowania nominalnego - optymalnego regulatora stanu.</p>
+                <div class="page-header">
+                    <h2>Rozdział 12.
+                        <small><b>Optymalizacja procesów sterowania z opóźnieniami</b></small>
+                    </h2>
+                </div>
+                <p>
+                Problem sterowania optymalnego procesami z opóźnieniami stanu polega na minimalizacji wskaźnika jakości
+                z uwzględnieniem dynamiki procesu ze skupionym opóźnieniem stanu i z zadanym funkcyjnym warunkiem
+                początkowym oraz z uwzględnieniem ograniczeń chwilowych ograniczeń sterowania.
+                </p><p>
+                Przez złożonych charakter dynamiki procesów sterowania z opóźnieniami do ich optymalizacji stosowane są
+                w pierwszej kolejności \textbf{metody kierunków poprawy} takie jak metoda najszybszego spadku z
+                antygradientem jako kierunkiem poprawy lub z rzutowaniem antygradientem jako kierunkiem poprawy. Metoda
+                kierunków poprawy dla klasy rozważanych problemów sterowania może być określona następująco:
+                <ul class="uln">
+                    <li> określ początkowe sterowania i funkcyjny warunek początkowy stanu</li>
+                    <li>wyznacz rozwiązanie równania stanu z opóźnieniami stanu</li>
+                    <li> wyznacz rozwiązanie równania sprzężonego z wyprzedzeniem zmiennej sprzężonej</li>
+                    <li> oblicz gradient wskaźnika jakości w przestrzeni funkcyjnej sterowania jako pochodną funkcji
+                        Hamiltona problemu sterowania z opóźnieniami
+                    </li>
+                    <li> oblicz nowe sterowanie w kierunku antygradientu lub w kierunku rzutowanego antygradientu</li>
+                </ul>
+                <br/></p>
+                <div class="page-header">
+                    <h2>Rozdział 13.
+                        <small><b>Optymalne sterowanie cykliczne dla układów o parametrach rozłożonych</b></small>
+                    </h2>
+                </div>
+                <p>
+                Do obiektów o parametrów złożonych można zaliczyć wiele procesów technologicznych (urządzenia typu
+                rurowego, kolumnowego). Stan takich obiektów zależy od współrzędnej czasowej t i współrzędnej
+                przestrzennej z. Natomiast sterowanie może mieć zarówno charakter skupiony typu brzegowego u(t) jak i
+                przepływowego v(t) oraz przestrzennie rozłożonego w(t,z).
+
+                </p><p>
+                Optymalny statyczny proces sterowania można stosunkowo łatwo wyznaczyć stosując metody optymalizacji
+                procesów o parametrach skupionych. Jego interpretacja sprowadza się do projektowania układów
+                stabilizacji stanu procesu. Niestety może się to wiązać z niskim wskaźnikiem jakości. Ważne jest więc,
+                aby analizować warunki przy których stosowanie cyklicznego sposobu prowadzenia procesu zwiększa jego
+                wydajność w porównaniu z optymalnym procesem statycznym. Uzyskanie takich warunków dla układów o
+                parametrach rozłożonych jest utrudnione z uwagi na złożony charakter ich równań stanu jako równań
+                różniczkowych o pochodnych cząstkowych. Z racji tego praktyczne zastosowanie znajduje się przy
+                wykorzystaniu redukcji równań dynamiki o parametrach rozłożonych do równań dynamiki o parametrach
+                skupionych np.: z wykorzystaniem dyskretyzacji przestrzennej.</p>
+                <div class="page-header">
+                    <h2>Rozdział 14.
+                        <small><b>Problematyka sterowania optymalnego. Przykłady</b></small>
+                    </h2>
+                </div><p>
+                <ul class="uln">
+                    <li><b>Przeprowadzenie obiektu z jednego stanu w drugi w najkrótszym czasie.</b>
+                        Przykładem może być przeprowadzenia wału silnika z położenia zerowego do końcowego w najkrótszym
+                        czasie, przy czym napięcie nie może przekroczyć z góry ustalonej wartości.
+                    </li>
+                    <li><b>Ekonomiczne zużycie paliwa</b>
+                        Samolot zabiera określoną ilość paliwa. Zagadnienia optymalnego sterowania będzie polegało na
+                        tym, aby tak regulować prędkość, jako funkcję ilości paliwa, z uwzględnieniem warunków
+                        atmosferycznych, aby samolot miał jak największy zasięg. Matematyczne sformułowanie tego
+                        zagadnienia jest skomplikowane. Interesuje nas tutaj maksimum zasięgu i mamy ograniczone paliwo.
+                        Zakłócenia w tym przykładzie zmieniają się w nieprzewidywalny sposób.
+                    </li>
+                    <li><b>Optymalne tłumienie zmienne w układach pomiarowych</b>
+                        Problem polega na sprowadzeniu odchylenia napięcia w potencjometrze od wartości żądanej w
+                        najkrótszym czasie do zera. Tego rodzaju problemy można spotkać we wszystkich przyrządach
+                        pomiarowych typu galwanometru lub autokompresatora. Optymalne rozwiązanie otrzymuje się wtedy,
+                        gdy zmieni się konstrukcję urządzenia - współczynnik tłumienia powinien być na początku mały, a
+                        potem duży.
+                    </li>
+                    <li><b>Sterowanie optymalne w ekonomii</b>
+                        Teoria sterowania optymalnego znalazła szerokie i ważne zastosowanie w optymalnym planowaniu
+                        ekonomicznym, jak na przykład planowanie inwestycji, optymalny rozdział zasobów, zagadnienie
+                        optymlanej sieci transportu, optymalnego rozkładu obciążeń w systemie energetycznym i wielu
+                        innych.
+                    </li>
+                </ul>
+                </p>
+                Projekt został wykonany na kurs Projekt przejściowy na kierunku Automatyka i Robotyka.
+
+
             </div>
-            <div class="col-md-4">
+         <!--   <div class="col-md-4">
                 <h4>Podaj dane, aby otrzymać mail z wynikiem:</h4>
 
-    <div class="form-group">
-        <label for="firstname">Imię: </label>
-        <input th:type="text" id="firstname" class="form-control" th:field="${person.name}" required="true"
-               placeholder="Podaj imię"/>
-    </div>
+                <div class="form-group">
+                    <label for="firstname">Imię: </label>
+                    <input th:type="text" id="firstname" class="form-control" th:field="${person.name}" required="true"
+                           placeholder="Podaj imię"/>
+                </div>
 
-    <div class="form-group">
-        <label for="surname">Nazwisko: </label>
-        <input th:type="text" id="surname" class="form-control" th:field="${person.surname}"
-               placeholder="Podaj nazwisko"/>
-    </div>
+                <div class="form-group">
+                    <label for="surname">Nazwisko: </label>
+                    <input th:type="text" id="surname" class="form-control" th:field="${person.surname}"
+                           placeholder="Podaj nazwisko"/>
+                </div>
 
-    <div class="form-group">
-        <label for="mail">Mail: </label>
-        <input th:type="email" id="mail" class="form-control" th:field="${person.mail}" required="true"
-               placeholder="Podaj adres mailowy"/>
-    </div>
+                <div class="form-group">
+                    <label for="mail">Mail: </label>
+                    <input th:type="email" id="mail" class="form-control" th:field="${person.mail}" required="true"
+                           placeholder="Podaj adres mailowy"/>
+                </div>
 
-    <div class="form-group">
-        <button th:type="submit" class="btn btn-primary">Przejdź do quizu</button>
-    </div>
-            </div>
-        </div>
+                <div class="form-group">
+                    <button th:type="submit" class="btn btn-primary">Przejdź do quizu</button>
+                </div>
+
+            </div> -->
+
     </div>
 </form>
 
